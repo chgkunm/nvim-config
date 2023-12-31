@@ -11,9 +11,10 @@ return {
 		opts = {
 			options = {
 				icons_enabled = true,
-				--theme = 'onedark',
+				theme = "gruvbox",
+				--theme = "onedark",
 				--theme = 'tokyonight',
-				theme = "catppuccin",
+				--theme = "catppuccin",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 			},

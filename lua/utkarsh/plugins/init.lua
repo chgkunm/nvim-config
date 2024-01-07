@@ -31,7 +31,7 @@ return {
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
-		inti = function()
+		init = function()
 			vim.o.timeout = true
 			vim.o.timeoutlen = 500
 		end,
@@ -88,6 +88,9 @@ return {
 		event = "VeryLazy",
 	},
 	{
+		"christoomey/vim-tmux-navigator", -- tmux & split window navigation
+	},
+	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
@@ -96,5 +99,10 @@ return {
 				-- Configuration here, or leave empty to use defaults
 			})
 		end,
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = true,
 	},
 }

@@ -87,10 +87,7 @@ keymap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics l
 keymap("n", "<leader>w", ":w<CR>", opts, { desc = "save the current file" })
 
 -- save and quit
-keymap("n", "wq", ":wq<CR>", opts)
-
--- quit/without exit
-keymap("n", "qq", ":wqa<CR>", opts)
+keymap("n", "<leader>b", ":wqa<CR>", opts, { desc = "save all open buffers and quit" })
 
 -- move to end of line
 keymap({ "n", "v" }, "0", "$", opts, { desc = "end of the line" })
@@ -114,8 +111,6 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
--- list buffers
-keymap("n", "<leader>bb", ":buffers<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)

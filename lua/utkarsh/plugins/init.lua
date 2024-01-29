@@ -105,4 +105,8 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		config = true,
 	},
+	{
+		"ThePrimeagen/vim-be-good",
+		event = "VeryLazy",
+	},
 }

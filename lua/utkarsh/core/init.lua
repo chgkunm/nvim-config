@@ -84,10 +84,13 @@ keymap("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diag
 keymap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- save
-keymap("n", "<leader>w", ":w<CR>", opts, { desc = "save the current file" })
+keymap("n", "W", ":w<CR>", opts, { desc = "save the current file" })
+
+-- quit
+keymap("n", "Q", ":q<CR>", opts, { desc = "save the current file" })
 
 -- save and quit
-keymap("n", "<leader>b", ":wqa<CR>", opts, { desc = "save all open buffers and quit" })
+keymap("n", "B", ":wq<CR>", opts, { desc = "save and quit the current buffer" })
 
 -- move to end of line
 keymap({ "n", "v" }, "0", "$", opts, { desc = "end of the line" })
@@ -118,16 +121,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Move text up and down
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
-
--- Insert --
--- Press jk fast to exit insert mode
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
-
--- Visual --
--- Press jk fast to exit visual mode
-keymap("v", "kj", "<ESC>", opts)
-keymap("v", "jk", "<ESC>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv^", opts)

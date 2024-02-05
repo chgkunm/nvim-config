@@ -27,6 +27,15 @@ return {
 		-- See `:help ibl`
 		main = "ibl",
 		opts = {},
+		config = function()
+			local highlight = {
+				--"CursorColumn"],
+				"Whitespace",
+			}
+			require("ibl").setup({
+				indent = { highlight = highlight, char = "┊" },
+			})
+		end,
 	},
 	{
 		"folke/which-key.nvim",

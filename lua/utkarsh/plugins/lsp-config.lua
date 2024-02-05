@@ -34,6 +34,7 @@ return {
 					"emmet_ls",
 					"lua_ls",
 					"pyright",
+					"gopls",
 				},
 				-- auto-install configured servers (with lspconfig)
 				automatic_installation = true, -- not the same as ensure_installed
@@ -61,6 +62,8 @@ return {
 		config = function()
 			-- import lspconfig plugin
 			local lspconfig = require("lspconfig")
+
+			local util = require("lspconfig/util")
 
 			-- import cmp-nvim-lsp plugin
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -152,6 +155,21 @@ return {
 			lspconfig["pyright"].setup({
 				capabilities = capabilities,
 				on_attach = on_attach,
+			})
+
+			-- configure golang server
+			lspconfig["gopls"].setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				filetypes = { "go", "gomod", "gowork", "gotmpl" },
+				root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+						},
+					},
+				},
 			})
 
 			-- configure lua server (with special settings)

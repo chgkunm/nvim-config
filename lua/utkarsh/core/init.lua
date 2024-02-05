@@ -90,7 +90,7 @@ keymap("n", "W", ":w<CR>", opts, { desc = "save the current file" })
 keymap("n", "Q", ":q<CR>", opts, { desc = "save the current file" })
 
 -- save and quit
-keymap("n", "B", ":wq<CR>", opts, { desc = "save and quit the current buffer" })
+keymap("n", "WQ", ":wqa<CR>", opts, { desc = "save and quit all the buffer" })
 
 -- move to end of line
 keymap({ "n", "v" }, "0", "$", opts, { desc = "end of the line" })

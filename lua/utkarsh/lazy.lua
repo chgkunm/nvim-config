@@ -15,4 +15,4 @@ require("lazy").setup("utkarsh.plugins")
 
 local keymap = vim.keymap.set
 
-keymap("n", "<leader>pl", ":Lazy<CR>", { desc = "Open Lazy UI" })
+keymap("n", "<leader>L", ":Lazy<CR>", opts)

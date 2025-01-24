@@ -19,25 +19,24 @@ local options = {
 	termguicolors = true, -- set term gui colors (most terminals support this)
 	background = "dark", -- colorschemes that can be light or dark will be made dark
 	colorcolumn = "100", -- displays a line to represent a limit for horizontal code
-
+	backspace = "indent,eol,start", --allow backspace on indent, end of line or insert mode start position
 	timeoutlen = 300, -- time to wait for a mapped sequence to complete (in milliseconds)
 	undofile = true, -- enable persistent undo
 	updatetime = 300, -- faster completion (4000ms default)
 	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 	expandtab = true, -- convert tabs to spaces
 	shiftwidth = 4, -- the number of spaces inserted for each indentation
+	autoindent = true, --copy indent from current line when starting new one
 	tabstop = 4, -- insert 4 spaces for a tab
 	cursorline = true, -- highlight the current line
 	number = true, -- set numbered lines
 	relativenumber = true, -- set relative numbered lines
 	numberwidth = 4, -- set number column width to 2 {default 4}
-
 	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
 	wrap = false, -- display lines as one long line
 	linebreak = true, -- companion to wrap, don't split words
 	scrolloff = 8, -- minimal number of screen lines to keep above and below the cursor
 	sidescrolloff = 8, -- minimal number of screen columns either side of cursor if wrap is `false`
-	--  guifont = "monospace:h17",             -- the font used in graphical neovim applications
 	whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line
 }
 
@@ -87,7 +86,7 @@ keymap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics l
 keymap("n", "W", ":w<CR>", opts, { desc = "save the current file" })
 
 -- quit
-keymap("n", "Q", ":q<CR>", opts, { desc = "save the current file" })
+keymap("n", "Q", ":qa<CR>", opts, { desc = "quit from all the files" })
 
 -- save and quit
 keymap("n", "WQ", ":wqa<CR>", opts, { desc = "save and quit all the buffer" })
@@ -97,6 +96,10 @@ keymap({ "n", "v" }, "0", "$", opts, { desc = "end of the line" })
 
 -- move to start of line
 keymap({ "n", "v" }, "1", "0", opts, { desc = "start of the line" })
+
+-- increment/decrement numbers
+keymap("n", "<leader>+", "<C-a>", { desc = "Increment number" })
+keymap("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 
 -- Normal --
 -- clear search highlights

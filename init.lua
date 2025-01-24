@@ -1,7 +1,7 @@
-vim.keymap.set("", "<Space>", "<Nop>", opts)
+vim.keymap.set("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = "unnamedplus"
 
 require("utkarsh.core")
 require("utkarsh.lazy")

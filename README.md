@@ -1,3 +1,3 @@
 # Nvim-Config
 
-My Neovim config.
+Utkarsh's Neovim config.

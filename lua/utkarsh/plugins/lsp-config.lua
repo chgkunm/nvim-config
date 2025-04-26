@@ -28,7 +28,7 @@ return {
 			mason_lspconfig.setup({
 				-- list of servers for mason to install
 				ensure_installed = {
-					"tsserver",
+					"ts_ls",
 					"html",
 					"cssls",
 					"emmet_ls",
@@ -133,7 +133,7 @@ return {
 			})
 
 			-- configure typescript server with plugin
-			lspconfig["tsserver"].setup({
+			lspconfig["ts_ls"].setup({
 				capabilities = capabilities,
 				on_attach = on_attach,
 			})

@@ -83,7 +83,7 @@ keymap("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diag
 keymap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- save
-keymap("n", "W", ":w<CR>", opts, { desc = "save the current file" })
+keymap("n", "W", ":wa<CR>", opts, { desc = "save the current file" })
 
 -- quit
 keymap("n", "Q", ":qa<CR>", opts, { desc = "quit from all the files" })
